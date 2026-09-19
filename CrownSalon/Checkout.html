@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<!------Header section-------->
+
+<body>
+    <center>
+        <header>
+           <nav>
+           <h1 style= "background-color:violet ; border:2px solid black;">CROWNSALON</h1>   
+            <ul style="display: flex; justify-content: center;list-style: none; padding: 10; gap: 50px;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About us.html">About</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="Booking policy.html">Booking Policy</a></li>
+            <li><a href="Contact us.html">Contact</a></li>
+            <li><a href="Login system.html">Log In</a></li>
+            <li><a href="Checkout.html">Book Now</a></li>
+      </ul>
+       </nav>   
+
+       <!---------Booking section---------->
+        <h2>Checkout/Booking</h2>
+    </header>
+    </center>
+
+  <div class="booking-layout">
+    <div class="booking-col">
+
+      <div class="booking-step">
+        <div class="booking-step-heading">
+          <span class="step-number">1</span>
+          <h3>Choose your services</h3>
+        </div>
+        <ul class="service-select-list">
+          <li>
+            <label>
+              <input type="checkbox" class="service-checkbox" id="svc-hair" data-service="hair" data-price="450" checked>
+              <span class="service-name-block">Hair Styling <span class="service-meta">45 min</span></span>
+            </label>
+            <span class="price">R450</span>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="service-checkbox" id="svc-lashes" data-service="lashes" data-price="600">
+              <span class="service-name-block">Lashes <span class="service-meta">60 min</span></span>
+            </label>
+            <span class="price">R600</span>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="service-checkbox" id="svc-brows" data-service="brows" data-price="300" checked>
+              <span class="service-name-block">Brow Lamination <span class="service-meta">30 min</span></span>
+            </label>
+            <span class="price">R300</span>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="service-checkbox" id="svc-braids" data-service="braids" data-price="800">
+              <span class="service-name-block">Braids <span class="service-meta">120 min</span></span>
+            </label>
+            <span class="price">R800</span>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="service-checkbox" id="svc-nails" data-service="nails" data-price="300">
+              <span class="service-name-block">Nails <span class="service-meta">40 min</span></span>
+            </label>
+            <span class="price">R300</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="booking-step">
+        <div class="booking-step-heading">
+          <span class="step-number">2</span>
+          <h3>Pick a date and time</h3>
+        </div>
+        <form class="form-card" style="max-width:none; margin-bottom:0;">
+          <div class="field">
+            <label for="booking-date">Date</label>
+            <input type="date" id="booking-date" name="date" required>
+          </div>
+          <div class="field" style="margin-bottom:0;">
+            <label for="booking-time">Time</label>
+            <select id="booking-time" name="time" required>
+              <option value="">Select a time</option>
+              <option>09:00</option>
+              <option>10:00</option>
+              <option>11:00</option>
+              <option>12:00</option>
+              <option>13:00</option>
+              <option>14:00</option>
+              <option>15:00</option>
+              <option>16:00</option>
+              <option>17:00</option>
+            </select>
+          </div>
+        </form>
+      </div>
+
+      <div class="booking-step">
+        <div class="booking-step-heading">
+          <span class="step-number">3</span>
+          <h3>Your details</h3>
+        </div>
+        <form class="form-card" style="max-width:none; margin-bottom:0;">
+          <div class="field">
+            <label for="checkout-first">First name</label>
+            <input type="text" id="checkout-first" name="first-name" required>
+          </div>
+          <div class="field">
+            <label for="checkout-last">Last name</label>
+            <input type="text" id="checkout-last" name="last-name" required>
+          </div>
+          <div class="field">
+            <label for="checkout-email">Email</label>
+            <input type="email" id="checkout-email" name="email" required>
+          </div>
+          <div class="field" style="margin-bottom:0;">
+            <label for="checkout-phone">Phone</label>
+            <input type="tel" id="checkout-phone" name="phone" required>
+          </div>
+        </form>
+      </div>
+
+      <div class="booking-step" style="margin-bottom:0;">
+        <div class="booking-step-heading">
+          <span class="step-number">4</span>
+          <h3>Payment details</h3>
+        </div>
+        <form id="paymentForm" class="form-card" style="max-width:none; margin-bottom:0;">
+          <p id="bookingMessage" class="form-notice" style="display:none;"></p>
+          <div class="field">
+            <label for="checkout-card">Card number</label>
+            <input type="text" id="checkout-card" name="card-number" placeholder="1234 5678 9012 3456" required>
+          </div>
+          <div class="field" style="margin-bottom:0;">
+            <label for="checkout-exp">Expiry</label>
+            <input type="text" id="checkout-exp" name="expiry" placeholder="MM/YY" required>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+    <aside class="summary-card">
+      <h3>Order Summary</h3>
+      <div class="receipt">
+        <div class="receipt-row" data-service="hair"><span>Hair Styling</span><span>R450.00</span></div>
+        <div class="receipt-row" data-service="lashes" style="display:none;"><span>Lashes</span><span>R600.00</span></div>
+        <div class="receipt-row" data-service="brows"><span>Brow Lamination</span><span>R300.00</span></div>
+        <div class="receipt-row" data-service="braids" style="display:none;"><span>Braids</span><span>R800.00</span></div>
+        <div class="receipt-row" data-service="nails" style="display:none;"><span>Nails</span><span>R300.00</span></div>
+        <div class="receipt-row"><span>Deposit</span><span>R100.00</span></div>
+        <div class="receipt-total"><span>Total due</span><span id="bookingTotal">R850.00</span></div>
+      </div>
+      <button type="submit" form="paymentForm" class="btn btn-primary">Confirm Booking</button>
+      <p class="summary-note">Deposit is due today. The remaining balance is paid in-salon.</p>
+    </aside>
+  </div>
+
+  <!------Footer section----------->
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <span class="footer-brand-logo">CrownSalon</span>
+      <p>Hair, lashes, brows, braids, and nails — all under one roof.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About us.html">About Us</a></li>
+          <li><a href="Services.html">Services</a></li>
+          <li><a href="Booking policy.html">Booking Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="Login system.html">Log in</a></li>
+          <li><a href="Checkout.html">Book Now</a></li>
+          <li><a href="Contact us.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit Us</h4>
+        <p>43 Umhlanga drive</p>
+        <p>(071) 456-7890</p>
+        <ul class="footer-hours">
+          <li><span>Tue–Fri</span><span>9am–6pm</span></li>
+          <li><span>Saturday</span><span>9am–4pm</span></li>
+          <li><span>Sun–Mon</span><span>Closed</span></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-newsletter">
+        <h4>Stay In The Loop</h4>
+        <p>Get first access to new stylists and seasonal offers.</p>
+        <form class="footer-newsletter-form">
+          <input type="email" placeholder="Your email" aria-label="Email address" required>
+          <button type="submit">Sign up</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CrownSalon. All rights reserved.</p>
+      <p><a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+    </div>
+  </footer>
+
+  <script src="checkout.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<!------Header section/Navigation-------->
+<body>
+    <center>
+        <header>
+          <nav>
+           <h1 style= "background-color:violet ; border:2px solid black;">CROWNSALON</h1>   
+            <ul style="display: flex; justify-content: center;list-style: none; padding: 10; gap: 50px;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About us.html">About</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="Booking policy.html">Booking Policy</a></li>
+            <li><a href="Contact us.html">Contact</a></li>
+            <li><a href="Login system.html">Log In</a></li>
+            <li><a href="Checkout.html">Book Now</a></li>
+      </ul>
+       </nav>   
+        <h2>Login</h2>
+        
+    </header>
+    </center>
+
+    <!----Login system section------>
+
+  <section class="section" id="login-section">
+
+    <div id="loggedInView" class="form-card" style="display:none; text-align:center;">
+      <h3>Welcome back, <span id="welcomeName"></span>!</h3>
+      <p>You're logged in to your CrownSalon account.</p>
+      <a href="Checkout.html" class="btn btn-primary" style="display:block; margin-bottom:12px;">Book an Appointment</a>
+      <button type="button" id="logoutBtn" class="btn btn-ghost" style="width:100%;">Log Out</button>
+    </div>
+
+    <form id="loginForm" class="form-card">
+      <h3>Log In</h3>
+      <p class="auth-switch">New to CrownSalon? <a href="#" id="showSignup">Create an account</a></p>
+      <p id="loginError" class="form-notice" style="display:none;"></p>
+      <div class="field">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" name="email" required>
+      </div>
+      <div class="field">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" name="password" required minlength="6">
+      </div>
+      <button type="submit" class="btn btn-primary">Log in</button>
+      <p class="form-footnote"><a href="#" id="showForgot">Forgot password</a></p>
+    </form>
+
+    <form id="signupForm" class="form-card" style="display:none;">
+      <h3>Create Your Account</h3>
+      <p class="auth-switch">Already have an account? <a href="#" id="showLoginFromSignup">Log in</a></p>
+      <p id="signupError" class="form-notice" style="display:none;"></p>
+      <div class="field">
+        <label for="signup-first">First name</label>
+        <input type="text" id="signup-first" required>
+      </div>
+      <div class="field">
+        <label for="signup-last">Last name</label>
+        <input type="text" id="signup-last" required>
+      </div>
+      <div class="field">
+        <label for="signup-email">Email</label>
+        <input type="email" id="signup-email" required>
+      </div>
+      <div class="field">
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password" required minlength="6">
+      </div>
+      <div class="field">
+        <label for="signup-confirm">Confirm password</label>
+        <input type="password" id="signup-confirm" required minlength="6">
+      </div>
+      <button type="submit" class="btn btn-primary">Create account</button>
+    </form>
+
+    <form id="forgotForm" class="form-card" style="display:none;">
+      <h3>Reset Password</h3>
+      <p id="forgotMessage" class="form-notice" style="display:none;"></p>
+      <div class="field">
+        <label for="forgot-email">Email</label>
+        <input type="email" id="forgot-email" required>
+      </div>
+      <div class="field">
+        <label for="forgot-newpass">New password</label>
+        <input type="password" id="forgot-newpass" required minlength="6">
+      </div>
+      <button type="submit" class="btn btn-primary">Reset password</button>
+      <p class="form-footnote"><a href="#" id="showLoginFromForgot">Back to log in</a></p>
+    </form>
+
+  </section>
+
+  <!------Footer section----------->
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <span class="footer-brand-logo">CrownSalon</span>
+      <p>Hair, lashes, brows, braids, and nails — all under one roof.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About us.html">About Us</a></li>
+          <li><a href="Services.html">Services</a></li>
+          <li><a href="Booking policy.html">Booking Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="Login system.html">Log in</a></li>
+          <li><a href="Checkout.html">Book Now</a></li>
+          <li><a href="Contact us.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit Us</h4>
+        <p>43 Umhlanga drive</p>
+        <p>(071) 456-7890</p>
+        <ul class="footer-hours">
+          <li><span>Tue–Fri</span><span>9am–6pm</span></li>
+          <li><span>Saturday</span><span>9am–4pm</span></li>
+          <li><span>Sun–Mon</span><span>Closed</span></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-newsletter">
+        <h4>Stay In The Loop</h4>
+        <p>Get first access to new stylists and seasonal offers.</p>
+        <form class="footer-newsletter-form">
+          <input type="email" placeholder="Your email" aria-label="Email address" required>
+          <button type="submit">Sign up</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CrownSalon. All rights reserved.</p>
+      <p><a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+    </div>
+  </footer>
+
+  <script src="login.js" defer></script>
+</body>
+
+</html>
