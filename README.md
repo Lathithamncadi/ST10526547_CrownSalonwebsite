@@ -1,68 +1,108 @@
 # CrownSalon
 
-A multi-page website for CrownSalon, a beauty salon offering hair, lashes, brows, braids, and nail services. Visitors can learn about the salon, browse services, review the booking policy, create an account/log in, book an appointment, and get in touch.
+A multi-page website for CrownSalon, a beauty salon offering hair, lashes, brows, braids, and nail services. Visitors can learn about the salon, browse and search services, review the booking policy, create an account/log in, enquire about a service, book an appointment, and get in touch.
+
+**Live site:** _add your Netlify / GitHub Pages link here_
+**Repository:** _add your GitHub link here_
 
 ## Overview
 
-This is the homepage (`index.html`) of the site. It introduces the salon and links out to the other pages, while also embedding quick-access sections (About, Services, Booking Policy, Log In, Checkout, Contact) directly on the page.
+`index.html` is the homepage. It introduces the salon, shows a clickable photo gallery and links out to the other pages. Part 1 built the structure, Part 2 added styling and the login/checkout scripts, and Part 3 (this version) adds JavaScript interactivity, SEO, validated forms and deployment.
 
 ## Pages
 
 | Page | File | Description |
 |---|---|---|
-| Home | `index.html` | Landing page with navigation, hero images, and quick links to every section |
-| About | `About us.html` | More detail about the salon |
-| Services | `Services.html` | Full list of services offered |
-| Booking Policy | `Booking policy.html` | Salon booking rules and policies |
-| Contact | `Contact us.html` | Contact form and address details |
-| Log In | `Login system.html` | Customer login |
-| Book Now | `Checkout.html` | Booking/checkout form |
+| Home | `index.html` | Landing page with navigation, lightbox gallery and quick links to every section |
+| About | `about.html` | More detail about the salon |
+| Services | `services.html` | Searchable, filterable, sortable list of services (loaded from `services.json`) |
+| Booking Policy | `booking-policy.html` | Salon booking rules, shown as an accordion |
+| Enquiry | `enquiry.html` | **New in Part 3.** Validated enquiry form that returns a cost and availability quote |
+| Contact | `contact.html` | Validated contact form that builds an email, address details and an interactive map |
+| Log In | `login.html` | Customer login, sign-up and password reset |
+| Book Now | `checkout.html` | Booking/checkout form with order summary |
 
 ## Features
 
-- **Navigation bar** linking to all core pages
-- **Image gallery** on the homepage showcasing braids, lashes, nails, brows, and hair installs
-- **Login form** — email and password fields, with links to create an account or recover a password
-- **Checkout / booking form** — collects name, email, phone, and payment details to confirm a booking, plus an order summary section
-- **Contact form** — name, email, and message fields, alongside the salon's address, phone number, and business hours
-- **Footer** with quick links (About, Services, Booking Policy, Account, Contact), social links (Instagram, TikTok), and copyright/legal links
+- **Navigation bar and footer** linking to all pages, with opening hours and a newsletter sign-up
+- **Lightbox gallery** (home and services pages): click or press Enter on an image, arrow keys to browse, Esc to close
+- **Accordion** for the booking policy (keyboard accessible, `aria-expanded`)
+- **Interactive map** on the contact page (Leaflet + OpenStreetMap)
+- **Animations**: scroll-reveal and button hover transitions, switched off for users who prefer reduced motion
+- **Dynamic services**: cards built in the DOM from `services.json` with `fetch`, plus search, price filter and sort
+- **Enquiry form**: validates input, then fetches pricing and shows cost, duration, deposit and opening hours for the chosen date
+- **Contact form**: validates input, then compiles an email to CrownSaloninfo@gmail.com that the visitor sends with one click
+- **Login and checkout** (from Part 2): account forms and a booking summary driven by `login.js` and `checkout.js`
+
+## Form validation
+
+Both new forms use HTML5 attributes (`required`, `type`, `minlength`, `maxlength`, `pattern`) and JavaScript validation (`novalidate` + custom checks) with inline error messages that update as the user types. Rules include: valid email, South African phone format (e.g. `0714567890` or `+27714567890`), minimum message length, and a date that is not in the past and not a Sunday or Monday (salon closed).
+
+## SEO
+
+- Unique `<title>` and meta description on every page, plus canonical and Open Graph tags
+- One `<h1>` per page with `h2`/`h3` beneath it
+- Descriptive alt text and file names for images, lazy loading, compressed images, `width`/`height` set
+- Clean lowercase URLs, internal links between pages, mobile-friendly navigation
+- `robots.txt` and `sitemap.xml` (update the domain after deployment)
+- Targeted keywords: salon Umhlanga, lash extensions, brow lamination, braids, hair installation, nails
+
+## Security and performance
+
+- `_headers` (Netlify) sets a Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, Referrer-Policy and Permissions-Policy
+- Scripts load with `defer`; user input is written to the page with `textContent`, not `innerHTML`
 
 ## Project Structure
 
 ```
 /
 ├── index.html
-├── About us.html
-├── Services.html
-├── Booking policy.html
-├── Contact us.html
-├── Login system.html
-├── Checkout.html
-└── images/
-    ├── braids.jpeg
-    ├── lashes.jpg
-    ├── nails.jpeg
-    ├── brows.jpeg
-    └── install.jpg
+├── about.html
+├── services.html
+├── booking-policy.html
+├── enquiry.html
+├── contact.html
+├── login.html
+├── checkout.html
+├── style.css              (Part 2 styles)
+├── enhancements.css       (Part 3 styles)
+├── enhancements.js        (Part 3 scripts)
+├── login.js
+├── checkout.js
+├── services.json
+├── robots.txt
+├── sitemap.xml
+├── _headers
+└── images: braids.jpeg, lashes.jpg, nails.jpeg, brows.jpeg, install.jpg,
+            maintenance.jpg, wallpaper.jpeg
 ```
 
-> Note: image files (`braids.jpeg`, `lashes.jpg`, `nails.jpeg`, `brows.jpeg`, `install.jpg`) are referenced directly by filename in the HTML — make sure they sit in the same folder as `index.html`, or update the `src` paths if you move them into an `images/` subfolder.
-
-## Known Issues / Cleanup Suggestions
-
-- There's a duplicate `<body>` tag in `index.html` (one wraps the header image gallery, then a second `<body>` opens for `<main>`) — HTML only allows one `<body>` per document.
-- The `<img>` tags are self-closed with a stray `</img.src>` instead of a proper closing style — image tags are void elements and don't need a closing tag at all (e.g. `<img src="braids.jpeg" width="220" height="200">`).
-- The `length` attribute isn't valid for images — use `height` instead.
-- Contact links are inconsistent in capitalization (`Contact us.html` vs `contact us.html`), which can cause broken links on case-sensitive servers.
-- Forms don't yet have an `action` or backend endpoint set, so submissions won't currently go anywhere.
-- No CSS file is linked — styling beyond the inline `<h1>` background color isn't yet defined.
+Images sit in the same folder as the HTML files. Run the site through Netlify, GitHub Pages or a local server (e.g. VS Code Live Server) so `services.json` can load; if it cannot, the site falls back to a built-in copy.
 
 ## Getting Started
 
-1. Clone or download the project files.
-2. Ensure all referenced image files are present in the same directory.
-3. Open `index.html` in a browser to view the site.
-4. (Optional) Add a stylesheet and link it in the `<head>` for full styling.
+1. Clone or download the repository.
+2. Open the folder with a local server (or just deploy it) and visit `index.html`.
+3. After deploying, replace `https://YOUR-SITE.netlify.app` in `sitemap.xml`, `robots.txt` and the canonical tags with your real URL.
+
+## Changelog
+
+### Part 3 (2026-11-04)
+
+| File(s) | Change |
+|---|---|
+| all pages | Renamed pages to clean URLs (`About us.html` to `about.html`, etc.) and updated every nav and footer link. This also resolves the Part 1 note about inconsistent capitalisation and spaces in file names. |
+| all pages | Added unique titles and meta descriptions, canonical and Open Graph tags; brand name changed from `h1` to a styled paragraph so each page has a single `h1`. |
+| all pages | Added Enquiry link to the nav and footer; added `enhancements.css` and `enhancements.js`. |
+| `index.html` | Fixed the duplicate `<body>` tag and stray `</header>`; replaced the invalid `</img.src>` closings and `length` attributes with valid `<img>` tags using `height`; added alt text; corrected the "Welcomee" typo; made the gallery a lightbox and added a gallery section. |
+| `services.html`, `booking-policy.html` | Removed duplicate `<body>`/`</body>` tags. |
+| `about.html` | Removed a stray `</style>` tag. |
+| `services.html` | Replaced the static list with dynamic cards loaded from `services.json`, with search, price filter and sorting (static list kept in `<noscript>`). |
+| `booking-policy.html` | Converted policies to an accordion; clearer `h1`. |
+| `contact.html` | Added validated contact form (email builder) and Leaflet map. Resolves the Part 1 note that forms had no action. |
+| `enquiry.html` | New page with validated enquiry form and quote response. |
+| new files | `services.json`, `robots.txt`, `sitemap.xml`, `_headers`. |
+| images | Compressed images for faster loading. |
 
 ## License
 
