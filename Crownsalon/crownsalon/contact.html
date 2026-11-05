@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact CrownSalon | Umhlanga Salon</title>
+    <link rel="stylesheet" href="style.css">
+
+<meta name="description" content="Contact CrownSalon at 43 Umhlanga Drive, call (071) 456-7890 or send us a message online.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://YOUR-SITE.netlify.app/contact.html">
+<meta property="og:title" content="Contact CrownSalon | Umhlanga Salon">
+<meta property="og:description" content="Contact CrownSalon at 43 Umhlanga Drive, call (071) 456-7890 or send us a message online.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="enhancements.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+</head>
+<!------Header section/Navigation-------->
+
+<body>
+    <center>
+        <header>   
+            <nav>
+           <p class="brand" style= "background-color:violet ; border:2px solid black;">CROWNSALON</p>   
+            <ul style="display: flex; justify-content: center;list-style: none; padding: 10; gap: 50px;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booking-policy.html">Booking Policy</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Log In</a></li>
+            <li><a href="checkout.html">Book Now</a></li>
+      </ul>
+       </nav> 
+       
+       <!-------Contact section------->
+            <h1>Contact us here</h1>
+            <p>We would love to hear from you,whether you have a question,need help choosing a 
+              service,we're here to help.Call or whatapp us on the number down below.</p>
+        </header>
+
+        <address>
+        <p>43 Umhlanga Drive</p>
+        <p>(071) 456-7890</p>
+        <p><a href="mailto:CrownSaloninfo@gmail.com">CrownSaloninfo@gmail.com</a></p>
+    
+      </address>
+    <section class="enh-section"><h2>Send us a message</h2>
+    <form id="contactForm" class="form-card" novalidate>
+      <div class="field"><label for="c-name">Full name</label><input id="c-name" name="name" type="text" required minlength="2" maxlength="60" autocomplete="name"><span class="error" aria-live="polite"></span></div>
+      <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" required autocomplete="email"><span class="error" aria-live="polite"></span></div>
+      <div class="field"><label for="c-phone">Phone number</label><input id="c-phone" name="phone" type="tel" required pattern="(\+27|0)[0-9]{9}" data-error="Use a South African number, e.g. 0714567890 or +27714567890." autocomplete="tel"><span class="error" aria-live="polite"></span></div>
+      <div class="field"><label for="c-type">Message type</label><select id="c-type" name="type" required><option value="">Select a type</option><option>General question</option><option>Booking help</option><option>Feedback</option><option>Complaint</option></select><span class="error" aria-live="polite"></span></div>
+      <div class="field"><label for="c-message">Message</label><textarea id="c-message" name="message" rows="5" required minlength="10" maxlength="500"></textarea><span class="error" aria-live="polite"></span></div>
+      <button type="submit" class="btn btn-primary">Prepare email</button>
+    </form>
+    <div id="emailPreview" hidden></div>
+    <h2>Find us</h2><div id="map" role="region" aria-label="Map showing the CrownSalon location"></div></section>
+    </center>
+
+    <!------Footer section----------->
+
+     <footer class="site-footer">
+    <div class="footer-top">
+      <span class="footer-brand-logo">CrownSalon</span>
+      <p>Hair, lashes, brows, braids, and nails — all under one roof.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="booking-policy.html">Booking Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="login.html">Log in</a></li>
+          <li><a href="checkout.html">Book Now</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit Us</h4>
+        <p>43 Umhlanga drive</p>
+        <p>(071) 456-7890</p>
+        <ul class="footer-hours">
+          <li><span>Tue–Fri</span><span>9am–6pm</span></li>
+          <li><span>Saturday</span><span>9am–4pm</span></li>
+          <li><span>Sun–Mon</span><span>Closed</span></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-newsletter">
+        <h4>Stay In The Loop</h4>
+        <p>Get first access to new stylists and seasonal offers.</p>
+        <form class="footer-newsletter-form">
+          <input type="email" placeholder="Your email" aria-label="Email address" required>
+          <button type="submit">Sign up</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CrownSalon. All rights reserved.</p>
+      <p><a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+    </div>
+  </footer>
+
+  <script src="login.js" defer></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="enhancements.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /login.html
+Disallow: /checkout.html
+
+Sitemap: https://YOUR-SITE.netlify.app/sitemap.xml

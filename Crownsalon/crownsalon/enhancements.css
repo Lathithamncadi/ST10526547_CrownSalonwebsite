@@ -1,0 +1,53 @@
+/* CrownSalon Part 3 additions (loaded after style.css) */
+img { max-width: 100%; height: auto; }
+.brand { font-size: 2em; font-weight: bold; margin: .67em 0; }
+.enh-section { max-width: 900px; margin: 24px auto; padding: 0 16px; text-align: center; }
+.enh-section .form-card { text-align: left; margin-left: auto; margin-right: auto; }
+
+/* validation */
+.error { display: block; color: #b00020; font-size: .85rem; min-height: 1.1em; }
+input[aria-invalid="true"], select[aria-invalid="true"], textarea[aria-invalid="true"] { border: 2px solid #b00020; }
+textarea { width: 100%; box-sizing: border-box; font: inherit; }
+
+/* services */
+.tools { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; align-items: center; margin-bottom: 8px; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.service-card { border: 1px solid #d9c6f0; border-radius: 12px; padding: 14px; background: #fff; }
+.service-card img { border-radius: 8px; width: 100%; object-fit: cover; aspect-ratio: 1; }
+.service-card .btn { display: inline-block; margin: 6px 4px 0; }
+
+/* accordion */
+.accordion { max-width: 700px; margin: 0 auto; padding: 0; }
+.accordion > li { border-bottom: 1px solid #d9c6f0; text-align: left; }
+.acc-btn { width: 100%; text-align: left; background: none; border: 0; font: inherit; font-weight: bold; padding: 14px 4px; cursor: pointer; }
+.acc-btn::after { content: "+"; float: right; }
+.acc-btn[aria-expanded="true"]::after { content: "–"; }
+
+/* gallery + lightbox */
+.gallery-img { cursor: zoom-in; border-radius: 8px; margin: 4px; }
+.lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.85); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 1000; }
+.lightbox[hidden] { display: none; }
+.lightbox img { max-width: 90vw; max-height: 78vh; border-radius: 8px; }
+.lb-cap { color: #fff; margin-top: 10px; max-width: 80vw; text-align: center; }
+.lb-close, .lb-nav { position: absolute; background: none; border: 0; color: #fff; font-size: 2.5rem; cursor: pointer; padding: 10px; }
+.lb-close { top: 10px; right: 20px; }
+.lb-prev { left: 10px; top: 50%; } .lb-next { right: 10px; top: 50%; }
+
+/* contact */
+#map { height: 320px; width: 100%; max-width: 800px; margin: 0 auto 24px; border-radius: 12px; }
+#emailPreview, #enquiryResult { margin: 16px auto; padding: 14px; border: 2px solid violet; border-radius: 12px; max-width: 520px; text-align: left; }
+#emailPreview[hidden] { display: none; }
+.mail-body { white-space: pre-wrap; background: #f7f0ff; padding: 8px; border-radius: 8px; }
+
+/* animation */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  .btn { transition: transform .15s ease; } .btn:hover { transform: translateY(-2px); }
+}
+
+/* mobile navigation */
+@media (max-width: 700px) {
+  nav ul { flex-wrap: wrap; gap: 12px !important; padding: 0 !important; }
+  .footer-links { flex-direction: column; }
+}

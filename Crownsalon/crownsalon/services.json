@@ -1,0 +1,47 @@
+[
+  {
+    "id": "hair",
+    "name": "Hair Styling",
+    "price": 450,
+    "duration": 45,
+    "image": "install.jpg",
+    "alt": "Body wave hair install with a middle part",
+    "description": "From sleek styles to glamourous curls, we create beautiful looks for every occasion, plus professional wig and hair installations."
+  },
+  {
+    "id": "lashes",
+    "name": "Lashes",
+    "price": 600,
+    "duration": 60,
+    "image": "lashes.jpg",
+    "alt": "Close-up of voluminous lash extensions",
+    "description": "Enhance your eyes with beautiful lash extensions for a fuller and more defined look."
+  },
+  {
+    "id": "brows",
+    "name": "Brow Lamination",
+    "price": 300,
+    "duration": 30,
+    "image": "brows.jpeg",
+    "alt": "Fuller, laminated brows after treatment",
+    "description": "Get fuller, more defined and beautifully shaped brows with our brow lamination service."
+  },
+  {
+    "id": "braids",
+    "name": "Braids",
+    "price": 800,
+    "duration": 120,
+    "image": "braids.jpeg",
+    "alt": "Long boho knotless braids with curly ends",
+    "description": "Beautiful and stylish braiding from classic braids to trendy protective styles."
+  },
+  {
+    "id": "nails",
+    "name": "Nails",
+    "price": 300,
+    "duration": 40,
+    "image": "nails.jpeg",
+    "alt": "French tip manicure and pedicure",
+    "description": "Treat yourself to beautiful manicures, gel nails and stylish nail designs."
+  }
+]
